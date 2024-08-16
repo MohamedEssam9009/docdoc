@@ -12,6 +12,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
+  ## A build system for Dart code generation and modular compilation.
+  build_runner: ^2.4.11
   ## State Management.
   flutter_bloc: ^8.1.5
   ## Code Generator (Mainly used with cubit & retrofit).

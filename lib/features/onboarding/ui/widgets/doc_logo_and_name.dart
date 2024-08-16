@@ -1,7 +1,8 @@
-import 'package:docdoc/core/helpers/spacing.dart';
-import 'package:docdoc/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/theming/styles.dart';
 
 class DocLogoAndName extends StatelessWidget {
   const DocLogoAndName({super.key});
