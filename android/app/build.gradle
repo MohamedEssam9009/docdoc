@@ -1,5 +1,8 @@
 plugins {
     id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
     id "kotlin-android"
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
@@ -53,6 +56,7 @@ android {
       development {
           dimension "default"
           applicationIdSuffix ".dev"
+          versionNameSuffix "-dev"
           resValue "string", "app_name", "DocDoc Development"
       }
   }
@@ -69,3 +73,19 @@ android {
 flutter {
     source = "../.."
 }
+
+ext.kotlin_version = "1.6.0" // or the version that matches your project setup
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    // Other dependencies
+}
+
+configurations.all {
+    resolutionStrategy {
+        force "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        force "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+        force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    }
+}
+
