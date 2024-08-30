@@ -29,10 +29,16 @@ class TextStyles {
     color: ColorsManager.grey,
   );
 
-    static TextStyle font12GreyRegular = TextStyle(
+  static TextStyle font12GreyRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.grey,
+  );
+
+  static TextStyle font12BlueRegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.mainBlue,
   );
 
   static TextStyle font13BlueRegular = TextStyle(
@@ -106,9 +112,9 @@ class TextStyles {
   //   color: ColorsManager.darkBlue,
   // );
 
-  // static TextStyle font18WhiteMedium = TextStyle(
-  //   fontSize: 18.sp,
-  //   fontWeight: FontWeightHelper.medium,
-  //   color: Colors.white,
-  // );
+  static TextStyle font18WhiteMedium = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: Colors.white,
+  );
 }
