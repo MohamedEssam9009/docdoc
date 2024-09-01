@@ -40,6 +40,8 @@ dependencies:
   flutter_screenutil: ^5.9.3
   ## Flutter plugin for Firebase Core, enabling connecting to multiple Firebase apps.
   firebase_core: ^3.3.0
+  ## Flutter library to load and cache network images.
+  cached_network_image: ^3.3.0
   
 
 
@@ -67,3 +69,6 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+
+  ## dart run build_runner build --delete-conflicting-outputs
+
