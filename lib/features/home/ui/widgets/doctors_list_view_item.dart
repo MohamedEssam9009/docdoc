@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:docdoc/features/home/data/models/specializations_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,20 +16,21 @@ class DoctorsListViewItems extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 16.h),
       child: Row(
         children: [
-          CachedNetworkImage(
-        imageUrl: "https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg",
-        placeholder: (context, url) => CircularProgressIndicator(),
-        errorWidget: (context, url, error) => Icon(Icons.error),
-     ),
-          // ClipRRect(
-          //   borderRadius: BorderRadius.circular(12.0),
-          //   child: Image.network(
-          //     width: 110.w,
-          //     height: 120.h,
-          //     'https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg',
-          //     fit: BoxFit.cover,
-          //   ),
+          // CachedNetworkImage(
+          //   imageUrl:
+          //       "https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg",
+          //   placeholder: (context, url) => CircularProgressIndicator(),
+          //   errorWidget: (context, url, error) => Icon(Icons.error),
           // ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12.0),
+            child: Image.network(
+              width: 110.w,
+              height: 120.h,
+              'https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg',
+              fit: BoxFit.cover,
+            ),
+          ),
           horizontalSpace(16),
           Expanded(
             child: Column(

@@ -38,18 +38,12 @@ class DoctorsBlueContainer extends StatelessWidget {
                 verticalSpace(16),
                 Expanded(
                   child: SizedBox(
-                    width: 109.w,
-                    height: 38.h,
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(48.0),
-                        ),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 18.w,
-                          vertical: 10.h,
                         ),
                       ),
                       child: Text(
