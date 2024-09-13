@@ -1,4 +1,5 @@
 import 'package:docdoc/core/helpers/extensions.dart';
+import 'package:docdoc/core/networking/api_error_model.dart';
 import 'package:docdoc/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,10 +16,10 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is Loading || current is Error || current is Success,
+          current is LoginLoading || current is LoginError || current is LoginSuccess,
       listener: (context, state) {
         state.whenOrNull(
-          loading: () {
+          loginLoading: () {
             showDialog(
               context: context,
               builder: (context) => const Center(
@@ -28,20 +29,20 @@ class LoginBlocListener extends StatelessWidget {
               ),
             );
           },
-          success: (loginResponse) {
+          loginSuccess: (loginResponse) {
             context.pop();
             context.pushNamed(Routes.homeScreen);
           },
-          error: (error) {
+          loginError: (apiErrorModel) {
             context.pop();
-             setupErrorState(context, error);
+             setupErrorState(context, apiErrorModel);
           },
         );
       },
       child: const SizedBox.shrink(),
     );
   }
-  void setupErrorState(BuildContext context, String error) {
+  void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
     context.pop();
     showDialog(
       context: context,
@@ -52,7 +53,7 @@ class LoginBlocListener extends StatelessWidget {
           size: 32,
         ),
         content: Text(
-          error,
+          apiErrorModel.getAllErrorsMessages(),
           style: TextStyles.font15DarkBlueMedium,
         ),
         actions: [
