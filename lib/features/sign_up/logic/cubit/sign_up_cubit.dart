@@ -5,7 +5,6 @@ import '../../data/models/sign_up_request_body.dart';
 import '../../data/repos/sign_up_repo.dart';
 import 'sign_up_state.dart';
 
-
 class SignUpCubit extends Cubit<SignUpState> {
   final SignUpRepo _signUpRepo;
   SignUpCubit(this._signUpRepo) : super(const SignUpState.initial());
@@ -30,10 +29,13 @@ class SignUpCubit extends Cubit<SignUpState> {
         gender: 0,
       ),
     );
-    response.when(success: (signUpResponse) {
-      emit(SignUpState.signUpSuccess(signUpResponse));
-    }, failure: (error) {
-      emit(SignUpState.signUpError(error: error.apiErrorModel.message ?? ''));
-    });
+    response.when(
+      success: (signUpResponse) {
+        emit(SignUpState.signUpSuccess(signUpResponse));
+      },
+      failure: (apiErrorModel) {
+        emit(SignUpState.signUpError(apiErrorModel));
+      },
+    );
   }
 }
